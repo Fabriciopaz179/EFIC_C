@@ -1,6 +1,9 @@
+package modelo;
+
 
 public class Cliente {
 
+private int id;
 private String nome;
 private String cpf;
 private String endereço;
@@ -8,6 +11,14 @@ private String telefone;
 private Float demandacont;
 private Float modalidadetarif;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -24,11 +35,11 @@ private Float modalidadetarif;
         this.cpf = cpf;
     }
 
-    public String getEndereço() {
+    public String getEndereco() {
         return endereço;
     }
 
-    public void setEndereço(String endereço) {
+    public void setEndereco(String endereço) {
         this.endereço = endereço;
     }
 
