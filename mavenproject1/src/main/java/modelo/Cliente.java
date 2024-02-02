@@ -9,7 +9,7 @@ private String cpf;
 private String endereço;
 private String telefone;
 private Float demandacont;
-private Float modalidadetarif;
+private String modalidadetarif;
 
     public int getId() {
         return id;
@@ -59,11 +59,11 @@ private Float modalidadetarif;
         this.demandacont = demandacont;
     }
 
-    public Float getModalidadetarif() {
+    public String getModalidadetarif() {
         return modalidadetarif;
     }
 
-    public void setModalidadetarif(Float modalidadetarif) {
+    public void setModalidadetarif(String modalidadetarif) {
         this.modalidadetarif = modalidadetarif;
     }
 
