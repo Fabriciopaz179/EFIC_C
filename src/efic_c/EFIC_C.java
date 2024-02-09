@@ -1,13 +1,8 @@
-package com.mycompany.mavenproject1;
+package efic_c;
 
-import java.util.ArrayList;
-import modelo.Cliente;
-import java.util.List;
-import java.util.Scanner;
+public class EFIC_C {
 
-public class Mavenproject1 {
-
-    static Scanner javain = new Scanner(System.in);
+   static Scanner javain = new Scanner(System.in);
 
     public static void main(String[] args) {
         
@@ -16,7 +11,7 @@ public class Mavenproject1 {
 
         int opcao;
         do {
-            System.out.println("Digite a opção: ");
+            System.out.println("Digite a opcao: ");
             opcao = javain.nextInt();
 
             switch(opcao) {
@@ -29,18 +24,21 @@ public class Mavenproject1 {
                     System.out.println("--- Cadastrar Cliente ---");
                     System.out.println("Informe o id do cliente");
                     c.setId(javain.nextInt());
+                    javain.nextLine();
                     System.out.println("Nome:");
                     c.setNome(javain.nextLine());
                     System.out.println("CPF:");
                     c.setCpf(javain.nextLine());
-                    System.out.println("Endereço:");
+                    System.out.println("Endereco:");
                     c.setEndereco(javain.nextLine());
                     System.out.println("Telefone:");
                     c.setTelefone(javain.nextLine());
                     System.out.println("Informe sua Demanda contratada atual:");
                     c.setDemandacont(javain.nextFloat());
+                    javain.nextLine();
                     System.out.println("Informe a modalidade tarifaria atual:");
                     c.setModalidadetarif(javain.nextLine());
+                    clientes.add(c);
                     break;
                     
                 case 2:
@@ -49,7 +47,7 @@ public class Mavenproject1 {
                         System.out.println("ID: " + cliente.getId());
                         System.out.println("Nome: " + cliente.getNome());
                         System.out.println("CPF: " + cliente.getCpf());
-                        System.out.println("Endereço: " + cliente.getEndereco());
+                        System.out.println("Endereco: " + cliente.getEndereco());
                         System.out.println("Telefone: " + cliente.getTelefone());
                         System.out.println("Demanda ATUAL: " + cliente.getDemandacont());
                         System.out.println("Modalidade tarifaria ATUAL: " + cliente.getModalidadetarif() + "\n");
@@ -68,6 +66,15 @@ public class Mavenproject1 {
                             cliente.setNome(javain.nextLine());
                             System.out.println("Digite o CPF: ");
                             cliente.setCpf(javain.nextLine());
+                            System.out.println("Digite o Endereco: ");
+                            cliente.setEndereco(javain.nextLine());
+                            System.out.println("Digite o Telefone: ");
+                            cliente.setTelefone(javain.nextLine());
+                            System.out.println("Informe sua Demanda contratada atual:");
+                            cliente.setDemandacont(javain.nextFloat());
+                            javain.nextLine();
+                            System.out.println("Informe a modalidade tarifaria atual:");
+                            cliente.setModalidadetarif(javain.nextLine());
                             encontrou = true;
                             break;
                         }
@@ -119,5 +126,5 @@ public class Mavenproject1 {
             }
         }
         return posicao;
-    }
+    } 
 }

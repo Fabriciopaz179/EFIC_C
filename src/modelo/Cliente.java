@@ -1,9 +1,11 @@
 package modelo;
 
+import java.util.Objects;
+
 
 public class Cliente {
 
-private int id;
+private Integer id;
 private String nome;
 private String cpf;
 private String endereço;
@@ -11,11 +13,11 @@ private String telefone;
 private Float demandacont;
 private String modalidadetarif;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     
@@ -66,5 +68,35 @@ private String modalidadetarif;
     public void setModalidadetarif(String modalidadetarif) {
         this.modalidadetarif = modalidadetarif;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + this.id;
+        hash = 59 * hash + Objects.hashCode(this.nome);
+        hash = 59 * hash + Objects.hashCode(this.cpf);
+        hash = 59 * hash + Objects.hashCode(this.endereço);
+        hash = 59 * hash + Objects.hashCode(this.telefone);
+        hash = 59 * hash + Objects.hashCode(this.demandacont);
+        hash = 59 * hash + Objects.hashCode(this.modalidadetarif);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        return this.id == other.id;
+    }
+    
+    
 
 }
