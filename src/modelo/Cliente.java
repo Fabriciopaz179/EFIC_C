@@ -13,6 +13,10 @@ private String telefone;
 private Float demandacont;
 private String modalidadetarif;
 
+    public Cliente(Integer id, String nome, String cpf, String endereco, String telefone, Float demandacont, String modalidadetarif) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public Integer getId() {
         return id;
     }
