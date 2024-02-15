@@ -1,6 +1,7 @@
 
 package View;
 
+import Controller.ControllerCliente;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,7 +12,6 @@ public class ViewCliente {
     static Scanner javain = new Scanner(System.in);
     ControllerCliente controle = new ControllerCliente();
     public Cliente cliente;
-    public Iterable<Cliente> clientes;
     
     public void cadastrar(List<Cliente> clientes){
         Integer id;
@@ -43,7 +43,7 @@ public class ViewCliente {
         clientes.add(cliente);
     }
     
-    public void listar(String[] args) {
+    public void listar(List<Cliente> clientes) {
         System.out.println("--- CLIENTES CADASTRADOS ---");
         for (Cliente cliente : clientes) {
             System.out.println("ID: " + cliente.getId());
@@ -56,7 +56,7 @@ public class ViewCliente {
         }
     }
         
-    public void alterar(String[] args){
+    public void alterar(List<Cliente> clientes){
         System.out.println("---- ALTERAR CLIENTE ----");
         System.out.println("Digite a id do cliente: ");
         Integer idCliente = javain.nextInt();
@@ -89,38 +89,18 @@ public class ViewCliente {
             }
     }
     
-    public void excluir(String[] args){
+    public void excluir(List<Cliente> clientes){
         System.out.println("---- EXCLUIR CLIENTE ----");
         System.out.println("Digite a id do cliente: ");
         Integer idCliente = javain.nextInt();
         javain.nextLine();
-        Integer posicao = controle.buscarClienteById(cliente,idCliente);
+        Integer posicao = controle.buscarClienteById(clientes,idCliente);
         if (posicao != null) {
-            clientes.remove(cliente.get(posicao));
+            clientes.remove(clientes.get(posicao));
             System.out.println("CLIENTE EXCLUÍDO COM SUCESSO!");
         } else {
             System.out.println("CLIENTE NÃO ENCONTRADO!");
         }
     }
-
-    public void listar(List<Cliente> clientes) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void alterar(List<Cliente> clientes) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void excluir(List<Cliente> clientes) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    private static class ControllerCliente {
-
-        public ControllerCliente() {
-        }
-
-        private Integer buscarClienteById(Cliente cliente, Integer idCliente) {
-            throw new UnsupportedOperationException("Not supported yet."); 
-        }
-    }
+    
 }
